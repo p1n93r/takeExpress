@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@import url(jquery.mCustomScrollbar.css);
+.admin_login{width:300px;height:400px;overflow:hidden;margin:5% auto 0 auto;padding:20px;box-shadow:0 -15px 30px #d9ece8;border-radius:20px;}
+.admin_login dt{font-size:20px;font-weight:bold;text-align:center;color:#45bda6;text-shadow:0 0 1px #0e947a;margin-bottom:15px;}
+.admin_login dt strong{display:block;}
+.admin_login dt em{display:block;font-size:12px;margin-top:8px;}
+.admin_login dd{margin:5px 0;height:42px;overflow:hidden;position:relative;}
+.admin_login dd .login_txtbx{font-size:14px;height:26px;line-height:26px;padding:8px 5%;width:90%;text-indent:2em;border:none;background:#5cbdaa;color:white;}
+.admin_login dd .login_txtbx::-webkit-input-placeholder {color:#f4f4f4;line-height:inherit;}
+.admin_login dd .login_txtbx:-moz-placeholder {color:#f4f4f4;line-height:inherit;}
+.admin_login dd .login_txtbx::-moz-placeholder {color:#f4f4f4;line-height:inherit;}
+.admin_login dd .login_txtbx:focus{background:#55b7a4;}
+.admin_login dd:before{font-family:'adminthemesregular';position:absolute;top:0;left:10px;height:42px;line-height:42px;font-size:20px;color:#0c9076;}
+.admin_login dd.user_icon:before{content:"u";}
+.admin_login dd.pwd_icon:before{content:"p";}
+.admin_login dd.val_icon:before{content:"n";}
+.admin_login dd .ver_btn{text-align:right;border:none;color:#f4f4f4;height:42px;line-height:42px;margin:0;z-index:1;position:relative;float:right;background:#48bca5;}
+.admin_login dd .checkcode{float:left;width:182px;height:42px;background:#fff}
+.admin_login dd .checkcode input{width:120px;height:36px;line-height:36px;padding:3px;color:white;outline:none;border:none;text-indent:2.8em;}
+.admin_login dd .checkcode canvas{width:85px;height:36px;padding:3px;z-index:0;background:#5cbdaa;}
+.admin_login dd .submit_btn{width:100%;height:42px;border:none;font-size:16px;background:#048f74;color:#f8f8f8; border-radius: 40px;}
+.admin_login dd .submit_btn:hover{background:#0c9076;color:#f4f4f4;}
+.admin_login dd p{color:#53c6b0;font-size:12px;text-align:center;margin:5px 0;}

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.express.mapper.LogOperationMapper">
+  <resultMap id="BaseResultMap" type="com.express.domain.LogOperation">
+    <id column="log_opid" jdbcType="INTEGER" property="logOpid" />
+    <result column="log_optype" jdbcType="VARCHAR" property="logOptype" />
+    <result column="log_opcontent" jdbcType="VARCHAR" property="logOpcontent" />
+    <result column="log_optime" jdbcType="VARCHAR" property="logOptime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    log_opid, log_optype, log_opcontent, log_optime
+  </sql>
+  <select id="selectByExample" parameterType="com.express.domain.LogOperationExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from log_operation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from log_operation
+    where log_opid = #{logOpid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from log_operation
+    where log_opid = #{logOpid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.express.domain.LogOperationExample">
+    delete from log_operation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="log_opid" keyProperty="logOpid" parameterType="com.express.domain.LogOperation" useGeneratedKeys="true">
+    insert into log_operation (log_optype, log_opcontent, log_optime
+      )
+    values (#{logOptype,jdbcType=VARCHAR}, #{logOpcontent,jdbcType=VARCHAR}, #{logOptime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="log_opid" keyProperty="logOpid" parameterType="com.express.domain.LogOperation" useGeneratedKeys="true">
+    insert into log_operation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logOptype != null">
+        log_optype,
+      </if>
+      <if test="logOpcontent != null">
+        log_opcontent,
+      </if>
+      <if test="logOptime != null">
+        log_optime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logOptype != null">
+        #{logOptype,jdbcType=VARCHAR},
+      </if>
+      <if test="logOpcontent != null">
+        #{logOpcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="logOptime != null">
+        #{logOptime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.express.domain.LogOperationExample" resultType="java.lang.Long">
+    select count(*) from log_operation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update log_operation
+    <set>
+      <if test="record.logOpid != null">
+        log_opid = #{record.logOpid,jdbcType=INTEGER},
+      </if>
+      <if test="record.logOptype != null">
+        log_optype = #{record.logOptype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logOpcontent != null">
+        log_opcontent = #{record.logOpcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logOptime != null">
+        log_optime = #{record.logOptime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update log_operation
+    set log_opid = #{record.logOpid,jdbcType=INTEGER},
+      log_optype = #{record.logOptype,jdbcType=VARCHAR},
+      log_opcontent = #{record.logOpcontent,jdbcType=VARCHAR},
+      log_optime = #{record.logOptime,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.express.domain.LogOperation">
+    update log_operation
+    <set>
+      <if test="logOptype != null">
+        log_optype = #{logOptype,jdbcType=VARCHAR},
+      </if>
+      <if test="logOpcontent != null">
+        log_opcontent = #{logOpcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="logOptime != null">
+        log_optime = #{logOptime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where log_opid = #{logOpid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.express.domain.LogOperation">
+    update log_operation
+    set log_optype = #{logOptype,jdbcType=VARCHAR},
+      log_opcontent = #{logOpcontent,jdbcType=VARCHAR},
+      log_optime = #{logOptime,jdbcType=VARCHAR}
+    where log_opid = #{logOpid,jdbcType=INTEGER}
+  </update>
+</mapper>

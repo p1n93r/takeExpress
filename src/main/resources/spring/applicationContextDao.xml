@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--组件扫描-->
+    <context:component-scan base-package="com.express"/>
+
+    <!--引入mysql链接属性文件-->
+    <context:property-placeholder location="classpath:mysql/db.properties" ignore-unresolvable="true"/>
+    <!-- 数据库连接池 -->
+    <!-- 创建阿里连接池 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+    <!-- 让spring管理sqlsessionfactory 使用mybatis和spring整合包中的 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 数据库连接池 -->
+        <property name="dataSource" ref="dataSource" />
+        <!-- 加载mybatis的全局配置文件 -->
+        <property name="configLocation" value="classpath:mybatis/config/mybatis-config.xml" />
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                            <!-- 数据库类型为mysql-->
+                            helperDialect=mysql
+                            reasonable=true
+                            params=value
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+    <!-- 将评论判断是否带有特殊字符集读取出来放到set集合里面  无序、不允许重复、没有索引-->
+    <bean id="CollectionBean" class="com.express.common.CollectionBean">
+       <property name="sets">
+            <set>
+                <!-- 这里支持多种寻址方式：classpath和file -->
+                <value>超时</value>
+                <value>收费过多</value>
+                <value>态度差</value>
+                <value>服务态度差</value>
+                <!-- 代取方评论关键字 -->
+                <value>描述不符</value>
+                <value>.....</value>
+            </set>
+       </property>
+    </bean>
+
+    <!-- mapper扫描器,扫描mapper接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="com.express.mapper"></property>
+    </bean>
+
+    <!--配置注解式aspectJ-->
+    <aop:aspectj-autoproxy/>
+
+</beans>

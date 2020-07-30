@@ -1,0 +1,119 @@
+@charset "UTF-8";
+.bg-gradient-primary{
+    background-color:#4e73df;
+    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(10%,#4e73df),to(#224abe));
+    background-image:linear-gradient(180deg,#4e73df 10%,#224abe 100%);
+    background-size:cover
+}
+.container{
+    width:100%;
+    padding-right:.75rem;
+    padding-left:.75rem;
+    margin-right:auto;
+    margin-left:auto
+}
+@media (min-width:576px){
+    .container{
+        max-width:540px
+    }
+}
+@media (min-width:768px){
+    .container{
+        max-width:720px
+    }
+}
+@media (min-width:992px){
+    .container{
+        max-width:960px
+    }
+}
+@media (min-width:1200px){
+    .container{
+        max-width:1140px
+    }
+}
+.o-hidden{
+    overflow:hidden!important
+}
+.border-0{
+    border:0!important
+}
+.shadow-lg{
+    -webkit-box-shadow:0 1rem 3rem rgba(0,0,0,.175)!important;
+    box-shadow:0 1rem 3rem rgba(0,0,0,.175)!important
+}
+.mb-4,.my-5{
+    margin-bottom:3rem!important
+}
+.p-0{
+    padding:0!important
+}
+.p-5{
+    padding:3rem!important
+}
+h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}
+.text-gray-900{
+    color:#3a3b45!important
+}
+form.user .custom-checkbox.small label{
+    line-height:1.5rem
+}
+form.user .form-control-user{
+    font-size:.8rem;
+    border-radius:10rem;
+    padding:1.5rem 1rem
+}
+form.user .btn-user{
+    font-size:.8rem;
+    border-radius:10rem;
+    padding:.75rem 1rem
+}
+.form-group{
+    margin-bottom:1rem
+}
+.form-control.is-valid,.was-validated .form-control:valid{border-color:#1cc88a;padding-right:calc(1.5em + .75rem);background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%231cc88a' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:center right calc(.375em + .1875rem);background-size:calc(.75em + .375rem) calc(.75em + .375rem)}.form-control.is-valid:focus,.was-validated .form-control:valid:focus{border-color:#1cc88a;-webkit-box-shadow:0 0 0 .2rem rgba(28,200,138,.25);box-shadow:0 0 0 .2rem rgba(28,200,138,.25)}.form-control.is-valid~.valid-feedback,.form-control.is-valid~.valid-tooltip,.was-validated .form-control:valid~.valid-feedback,.was-validated .form-control:valid~.valid-tooltip{display:block}.was-validated textarea.form-control:valid,textarea.form-control.is-valid{padding-right:calc(1.5em + .75rem);background-position:top calc(.375em + .1875rem) right calc(.375em + .1875rem)}
+form.user .form-control-user{
+    font-size:.6rem;
+    border-radius-:10rem;
+    padding:1.5rem 1rem
+}
+#code{
+    height: 3rem;
+    font-size:8px;
+    border-top-left-radius:10rem;
+    border-top-right-radius:0rem;
+    border-bottom-right-radius:0rem;
+    border-bottom-left-radius:10rem;
+
+}
+.getcode{
+    height: 3rem;
+    font-size:12px;
+    border-top-right-radius:10rem;
+    border-top-left-radius:0rem;
+    border-bottom-left-radius:0rem;
+    border-bottom-right-radius:10rem;
+
+}
+.custom-control-input.is-valid~.custom-control-label,.was-validated .custom-control-input:valid~.custom-control-label{color:#1cc88a}.custom-control-input.is-valid~.custom-control-label::before,.was-validated .custom-control-input:valid~.custom-control-label::before{border-color:#1cc88a}.custom-control-input.is-valid~.valid-feedback,.custom-control-input.is-valid~.valid-tooltip,.was-validated .custom-control-input:valid~.valid-feedback,.was-validated .custom-control-input:valid~.valid-tooltip{display:block}.custom-control-input.is-valid:checked~.custom-control-label::before,.was-validated .custom-control-input:valid:checked~.custom-control-label::before{border-color:#34e3a4;background-color:#34e3a4}.custom-control-input.is-valid:focus~.custom-control-label::before,.was-validated .custom-control-input:valid:focus~.custom-control-label::before{-webkit-box-shadow:0 0 0 .2rem rgba(28,200,138,.25);box-shadow:0 0 0 .2rem rgba(28,200,138,.25)}.custom-control-input.is-valid:focus:not(:checked)~.custom-control-label::before,.was-validated .custom-control-input:valid:focus:not(:checked)~.custom-control-label::before{border-color:#1cc88a}
+.bg-login-image{
+    background:url("../img/3.jpg");
+    background-position:center;
+    background-size:cover
+}
+
+#media {
+    width: 100%;
+    height: 60%;
+    margin: auto 0;
+    border-radius: 30px;
+    overflow: hidden;
+    opacity: 0.7px;
+}
+#video {
+}
+#canvas {
+    z-index: -1;
+    position: absolute;
+    display: none;
+}

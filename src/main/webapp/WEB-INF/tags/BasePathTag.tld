@@ -1,0 +1,28 @@
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<!-- 标签库描述符 -->
+<taglib xmlns="http://java.sun.com/JSP/TagLibraryDescriptor">
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>bp</short-name>
+    <uri>/setBasePath</uri>
+    <tag>
+        <!-- 标签名 -->
+        <name>basePath</name>
+        <!-- 标签助手类(自定义的标签类) 放入类的全限定名 -->
+        <tag-class>com.express.web.tags.BaseUrlTag</tag-class>
+        <!-- 标签的内容类型：empty表示空标签(使用空标签会报错)，jsp表示可以为任何合法的JSP元素 -->
+        <!--SimpleTagSupport不支持设置为JSP-->
+        <body-content>empty</body-content>
+        <attribute>
+            <!-- 属性名 -->
+            <name>request</name>
+            <!-- 是否为必填项 -->
+            <required>true</required>
+            <!--是否可以填jsp表达式  el表达式 -->
+            <rtexprvalue>true</rtexprvalue>
+            <type>javax.servlet.http.HttpServletRequest</type>
+        </attribute>
+    </tag>
+</taglib>

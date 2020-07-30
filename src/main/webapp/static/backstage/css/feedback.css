@@ -1,0 +1,13 @@
+.itemCenter{
+    text-align: center;
+    vertical-align:middle;
+}
+.popover-content{
+    word-wrap:break-word !important;
+    word-break:break-all !important;
+    white-space:normal !important;
+}
+.spanCenter{
+    text-align: center;
+    vertical-align:middle;
+}
