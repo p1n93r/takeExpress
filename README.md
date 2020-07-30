@@ -230,11 +230,11 @@
 [p3]:./readme/统计.png
 [p4]:./readme/用户反馈0.png
 [p5]:./readme/用户反馈1.png
-[p6]:./readme/用户反馈2.png
+[p6]:./readme/用户反馈2.jpg
 [p7]:./readme/支付0.png
 [p8]:./readme/支付1.png
-[p9]:./readme/支付2.png
-[p10]:./readme/支付3.png
+[p9]:./readme/支付2.jpg
+[p10]:./readme/支付3.jpg
 
 
 
