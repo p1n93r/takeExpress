@@ -3,6 +3,9 @@
 - 开发成员：fyzn、p1n93r、cassie、cyy
 - 我是p1n93r,我实现的内容包括：支付、日志、快递查询、站点统计、意见反馈
 
+## 演示地址
+<a href="http://106.13.6.229:33579/com.express/user/index">http://106.13.6.229:33579/com.express/user/index</a>
+
 ## 运行截图
 0x00 快递查询：  
 ![快递查询][p0]
